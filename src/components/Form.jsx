@@ -25,16 +25,10 @@ const Form = () => {
           <input onChange={(e)=>setname(e.target.value)}className='border border-gray-300 rounded py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500' type="text" required placeholder='Enter Name' value={name} />
           <input onChange={(e)=>setemail(e.target.value)} className='border border-gray-300 rounded py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500' type="email" required placeholder='Enter email' value={email} />
           <input onChange={(e)=>setphone(e.target.value)} className='border border-gray-300 rounded py-2 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500'  type="text" pattern="[0-9]*" inputMode="numeric"  placeholder='Enter phone No.' value={phone} />
-          <div className='flex items-center gap-3'>
-            <div>
-                 <input onChange={(e)=>setgender(e.target.value)} id='gender-male' type="radio" name='gender' value='Male' />
-                 <label htmlFor='gender-male'>Male</label>
-              </div>
-            <div>
-                <input onChange={(e)=>setgender(e.target.value)} id='gender-female' type="radio" name='gender' value='Female' />
-                 <label htmlFor='gender-female'>Female</label>
-            </div>
-            </div>
+             <div className='flex gap-3'><span><input onChange={(e)=>setgender(e.target.value)} id='gender-male' type="radio" name='gender' value='Male' checked={gender === 'Male'} />
+            <label htmlFor='gender-male'>Male</label></span>
+            <span><input onChange={(e)=>setgender(e.target.value)} id='gender-female' type="radio" name='gender' value='Female' checked={gender === 'Female'} />
+             <label htmlFor='gender-female'>Female</label></span></div>
             <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' type="submit">Submit</button>
         </form>
         <div className='flex items-center justify-center'>
